@@ -7,6 +7,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Grade {
 
-    public String grade;
+    private String grade;
+    private String subject;
+    private int credit;
 
 }
