@@ -22,10 +22,6 @@ class GradeTest {
 
     }
 
-    @Test
-    public void testGetGrade(){
 
-        grade.getGrade();
-    }
 
 }
