@@ -11,6 +11,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
@@ -49,5 +50,9 @@ public class GradeServiceTest {
         assertThat(grades.size(),is(1));
     }
 
-
+    @Test
+    public void upperCaseTest() {
+        Grade grade = new Grade("a+");
+        assertTrue(Character.isUpperCase(grade.getGrade().charAt(0)));
+    }
 }
