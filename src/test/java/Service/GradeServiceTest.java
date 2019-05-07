@@ -52,7 +52,23 @@ public class GradeServiceTest {
 
     @Test
     public void upperCaseTest() {
-        Grade grade = new Grade("a+");
+        Grade grade = new Grade("a+", null, 0);
         assertTrue(Character.isUpperCase(grade.getGrade().charAt(0)));
     }
+
+    @Test
+    public void setCreditTest(){
+        Grade grade1 = spy(Grade.class);
+        grade1.setCredit(3);
+        assertTrue(grade1.getCredit()>=0);
+    }
+
+    @Test
+    public void calculateCurrentGPA(){
+
+        gradeRepository.insertGrade(new Grade("A+", "sub1", 3));
+        gradeRepository.insertGrade(new Grade("A+", "sub2", 3));
+        assertThat(gradeService.calculateGPA(), is(4.5));
+    }
+
 }
