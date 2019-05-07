@@ -38,7 +38,7 @@ public class GradeServiceTest {
     @Test
     public void getGradeTest(){
 
-        //assertThat(gradeRepository.getGrades(), instanceOf());
+        assertThat(gradeRepository.getGrades(), instanceOf(List.class));
     }
 
     @Test
